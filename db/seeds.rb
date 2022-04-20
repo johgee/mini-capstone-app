@@ -6,23 +6,39 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-product = Product.new({ name: "cetaphil", price: 9, description: "for people with dry skin", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlKyNXrbsSYyJ5-Ah_xthpuC_BXeP1kOGJGQ&usqp=CAU" })
+#suppliers
+Supplier.create!(name: "Sephora", email: "sephora@test.com", phone_number: "123456789")
+Supplier.create!(name: "Ulta", email: "ulta@test.com", phone_number: "123456781")
+
+#products
+Product.create!({ supplier_id: 1, quantity: 34, name: "cetaphil", price: 9, description: "for people with dry skin" })
 product.save
 
-product = Product.new({ name: "cerave", price: 11, description: "for people with really really dry skin", image_url: "https://images.heb.com/is/image/HEBGrocery/001281037?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0" })
+Product.create!({ supplier_id: 1, quantity: 25, name: "cerave", price: 11, description: "for people with really really dry skin" })
 product.save
 
-product = Product.new({ name: "chanel", price: 50, description: "for people who don't use lotion", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9OSROaC-6saMIsxiJ_z-ierTooT3gyGqNHg&usqp=CAU" })
+Product.create!({ supplier_id: 1, quantity: 47, name: "chanel", price: 50, description: "for people who don't use lotion" })
 product.save
 
-product = Product.new({ name: "aveda", price: 25, description: "for people who like the smell", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-cvQKbVXONMWbjWD53OJh_a8jL22pFaSrAw&usqp=CAU" })
+Product.create!({ supplier_id: 1, quantity: 25, name: "aveda", price: 25, description: "for people who like the smell" })
 product.save
 
-product = Product.new({ name: "byredo", price: 35, description: "for people who like perfume", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYBqaWaT3ZO5ToTgJfLbTCLADclFQTwukzg&usqp=CAU" })
+Product.create!({ supplier_id: 2, quantity: 15, name: "byredo", price: 35, description: "for people who like perfume" })
 product.save
 
-product = Product.new({ name: "kiehl", price: 25, description: "for people who don't want smell", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4OO3MHPqMmuJ7Slieo6t9srIxtUeA2MncXek-WT_u8uCn0fiROPPQQ04f65Cuf_xxw1E&usqp=CAU" })
+Product.create!({ supplier_id: 2, quantity: 75, name: "kiehl", price: 25, description: "for people who don't want smell" })
 product.save
 
-product = Product.new({ name: "fresh", price: 24, description: "for people who want smell", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1V3FXHyinbTO5uMBDnn7WU9w4mKEdch1lYA&usqp=CAU" })
+Product.create!({ supplier_id: 2, quantity: 47, name: "fresh", price: 24, description: "for people who want smell" })
 product.save
+
+#images
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlKyNXrbsSYyJ5-Ah_xthpuC_BXeP1kOGJGQ&usqp=CAU")
+Image.create!(product_id: 1, url: "https://images.heb.com/is/image/HEBGrocery/001281037?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0")
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9OSROaC-6saMIsxiJ_z-ierTooT3gyGqNHg&usqp=CAU")
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-cvQKbVXONMWbjWD53OJh_a8jL22pFaSrAw&usqp=CAU")
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYBqaWaT3ZO5ToTgJfLbTCLADclFQTwukzg&usqp=CAU")
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4OO3MHPqMmuJ7Slieo6t9srIxtUeA2MncXek-WT_u8uCn0fiROPPQQ04f65Cuf_xxw1E&usqp=CAU")
+Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1V3FXHyinbTO5uMBDnn7WU9w4mKEdch1lYA&usqp=CAU")
+
+puts "all done!"

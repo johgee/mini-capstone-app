@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTAyNDQ3NjN9.hi7YiHOjWZCYQoUjIwPyMs4NQlhyvC-UwXYSsW8tvP4
+
 ### Products Index
 GET http://localhost:3000/products 
 
@@ -25,3 +27,57 @@ Content-Type: application/json
 
 ### Products Destroy
 DELETE http://localhost:3000/products/8
+
+### Supplier Index
+GET http://localhost:3000/suppliers 
+
+### Users create (signup) 
+POST http://localhost:3000/users
+Content-Type: application/json 
+
+{
+  "name": "signup name",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json 
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+### Order Index 
+GET http://localhost:3000/orders 
+Authorization: Bearer {{jwt}}
+
+### Order Create
+POST http://localhost:3000/orders 
+Authorization: Bearer {{jwt}}
+Content-Type: application/json 
+
+### Order Show
+GET http://localhost:3000/orders
+Authorization: Bearer {{jwt}}
+
+### Carted Products Create 
+POST http://localhost:3000/carted_products 
+Authorization: Bearer {{jwt}}
+Content-TYpe: application/json 
+
+{
+  "product_id": 4,
+  "quantity": 4
+}
+
+### Carted Products Index
+GET http://localhost:3000/carted_products 
+Authorization: Bearer {{jwt}}
+
+### Carted Products Delete
+DELETE http://localhost:3000/carted_products/1
+Authorization: Bearer {{jwt}}
