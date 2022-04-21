@@ -12,12 +12,13 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
       supplier_id: params["supplier_id"],
+      user_id: params["user_id"],
     )
 
     if product.save
       render json: product
     else
-      render json: { error_messages: product.errors.full_messages }, status: 422
+      render json: { errors: product.errors.full_messages }, status: unprocessable_entity
     end
   end
 
@@ -35,7 +36,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: { error_messages: product.errors.full_messages }, status: 422
+      render json: { errors: product.errors.full_messages }, status: unprocessable_entity
     end
   end
 

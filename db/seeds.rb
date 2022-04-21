@@ -6,31 +6,27 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+#users
+User.create!(name: "signup name", email: "signup@test.com", password: "lalala")
+
 #suppliers
 Supplier.create!(name: "Sephora", email: "sephora@test.com", phone_number: "123456789")
 Supplier.create!(name: "Ulta", email: "ulta@test.com", phone_number: "123456781")
 
 #products
 Product.create!({ supplier_id: 1, quantity: 34, name: "cetaphil", price: 9, description: "for people with dry skin" })
-product.save
 
 Product.create!({ supplier_id: 1, quantity: 25, name: "cerave", price: 11, description: "for people with really really dry skin" })
-product.save
 
 Product.create!({ supplier_id: 1, quantity: 47, name: "chanel", price: 50, description: "for people who don't use lotion" })
-product.save
 
 Product.create!({ supplier_id: 1, quantity: 25, name: "aveda", price: 25, description: "for people who like the smell" })
-product.save
 
 Product.create!({ supplier_id: 2, quantity: 15, name: "byredo", price: 35, description: "for people who like perfume" })
-product.save
 
 Product.create!({ supplier_id: 2, quantity: 75, name: "kiehl", price: 25, description: "for people who don't want smell" })
-product.save
 
 Product.create!({ supplier_id: 2, quantity: 47, name: "fresh", price: 24, description: "for people who want smell" })
-product.save
 
 #images
 Image.create!(product_id: 1, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlKyNXrbsSYyJ5-Ah_xthpuC_BXeP1kOGJGQ&usqp=CAU")
